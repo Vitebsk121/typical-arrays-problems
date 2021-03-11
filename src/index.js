@@ -1,12 +1,30 @@
 
 exports.min = function min (array) {
-  return 0;
+  if ((array === undefined) || (array.length === 0)) {
+      result = 0;
+  } else {
+      let arrSort = array.sort((a, b) => {return a - b;});
+      result = arrSort[0];
+  }
+  return result;
 }
 
 exports.max = function max (array) {
-  return 0;
+  if ((array === undefined) || (array.length === 0)) {
+      result = 0;
+  } else {
+      let arrSort = array.sort((a, b) => {return a - b;});
+      result = arrSort[(arrSort.length - 1)];
+  }
+  return result;
 }
 
 exports.avg = function avg (array) {
-  return 0;
+  if ((array === undefined) || (array.length === 0)) {
+      result = 0;
+  } else {
+      let sumOfItem = array.reduce((sum, item) => sum + item, 0);
+      result = sumOfItem / array.length;
+  }
+  return result;
 }
